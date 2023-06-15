@@ -33,6 +33,7 @@ public class GroupBySegmentList extends AbstractISegmentList {
 
     @Override
     protected boolean transformList(List<ISqlSegment> list, ISqlSegment firstSegment, ISqlSegment lastSegment) {
+        // 删除第一个值
         list.remove(0);
         return true;
     }
