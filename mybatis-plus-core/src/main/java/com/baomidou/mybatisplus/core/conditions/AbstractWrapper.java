@@ -487,9 +487,11 @@ public abstract class AbstractWrapper<T, R, Children extends AbstractWrapper<T, 
      * @param param   参数
      * @return value
      */
+    // 转换参数
     protected final String formatParam(String mapping, Object param) {
         final String genParamName = Constants.WRAPPER_PARAM + paramNameSeq.incrementAndGet();
         final String paramStr = getParamAlias() + Constants.WRAPPER_PARAM_MIDDLE + genParamName;
+        // 把参数名和值存储到map集合中，方便后续使用
         paramNameValuePairs.put(genParamName, param);
         return SqlScriptUtils.safeParam(paramStr, mapping);
     }
